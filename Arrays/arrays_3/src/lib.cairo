@@ -1,5 +1,5 @@
 fn create_array() -> Array<felt252> {
-    let mut a = ArrayTrait::new();
+    let mut a = ArrayTrait::new(); // something to change here...
     a.append(0);
     a.append(1);
     a.append(2);
@@ -7,18 +7,11 @@ fn create_array() -> Array<felt252> {
     a
 }
 
+
 #[test]
 fn test_arrays3() {
     let mut a = create_array();
-    // Use get instead of at
-    match a.get(2) {
-        Option::Some(value) => {
-            *value
-                .unbox();
-            println!("Element at index 2: {}", value)
-        },
-        Option::None => {
-            println!("Index 2 is out of bounds")
-        }
-    }
+    //TODO modify the method called below to make the test pass.
+    // You should not change the index accessed.
+    a.at(1);
 }
